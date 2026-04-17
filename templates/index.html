@@ -117,6 +117,10 @@ a:hover {
     </style>
 </head>
 <body>
+<form action="/search" method="GET">
+    <input type="text" name="query" placeholder="Search customers...">
+    <button type="submit">Search</button>
+</form>
     <form action="/add" method="post">
         <h2>ADD NEW CUSTOMER</h2>
         <input type="text"  name="name"         placeholder="CUSTOMER NAME" required>

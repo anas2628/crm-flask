@@ -70,6 +70,12 @@ def update():
     database.update_customer(id,name,email,phone,notes)
     return redirect(url_for('index'))
 
+@app.route('/search', methods = ['GET'])
+def search():
+    query = request.args.get('query')
+    customers = database.search_customers(query)
+    return render_template('index.html', customers=customers)
+
 #copy paste
 
 @app.route('/login', methods=['GET', 'POST'])

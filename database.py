@@ -46,3 +46,11 @@ def get_customer(id):
     result = c.fetchone()
     conn.close()
     return result
+
+def search_customers(query):
+    conn = sqlite3.connect('crm.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM customers WHERE name LIKE ?', ('%' + query + '%',))
+    result = c.fetchall()
+    conn.close()
+    return result
